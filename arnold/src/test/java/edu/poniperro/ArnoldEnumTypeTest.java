@@ -75,9 +75,9 @@ public class ArnoldEnumTypeTest {
         }
         assertThat(planetasIncluidos).isEqualTo(4);
 
-        // for (Planeta planeta : Planeta.getPlanetasTerrestres()) {
-        // assertThat(planeta.name()).isIn((Object[]) planetasTerrestres);
-        // }
+        for (Planeta planeta : Planeta.getPlanetasTerrestres()) {
+            assertThat(planeta.name()).isIn((Object[]) planetasTerrestres);
+        }
     }
 
     @Test
@@ -94,9 +94,9 @@ public class ArnoldEnumTypeTest {
         }
         assertThat(planetasIncluidos).isEqualTo(4);
 
-        // for (Planeta planeta : Planeta.getGigantesGaseosos()) {
-        // assertThat(planeta.name()).isIn((Object[]) gigantesGaseosos);
-        // }
+        for (Planeta planeta : Planeta.getGigantesGaseosos()) {
+            assertThat(planeta.name()).isIn((Object[]) gigantesGaseosos);
+        }
     }
 
 }
