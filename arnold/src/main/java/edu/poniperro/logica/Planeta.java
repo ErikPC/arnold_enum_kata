@@ -11,6 +11,7 @@ public enum Planeta {
     URANUS(8.686e+25, 2.5559e7),
     NEPTUNE(1.024e+26, 2.4746e7);
 
+    private final double G = 6.67300E-11;
     private final double masa;
     private final double radio;
 
@@ -25,5 +26,25 @@ public enum Planeta {
 
     public double getRadio() {
         return this.radio;
+    }
+
+    private double getG() {
+        return this.G;
+    }
+
+    public double pesoSuperficie(double peso) {
+        return tuMasa(peso) * gravedadEnSuperficie();
+    }
+
+    private double tuMasa(double peso) {
+        return peso / getGravedadSuperficialTierra();
+    }
+
+    private double getGravedadSuperficialTierra() {
+        return getG() * EARTH.getMasa() / Math.pow(EARTH.getRadio(), 2);
+    }
+
+    private double gravedadEnSuperficie() {
+        return getG() * getMasa() / Math.pow(getRadio(), 2);
     }
 }
